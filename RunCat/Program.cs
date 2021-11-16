@@ -69,6 +69,11 @@ namespace RunCat
                 new ToolStripMenuItem("Parrot", null, SetRunner)
                 {
                     Checked = runner.Equals("parrot")
+                },
+                //AddSamurai
+                new ToolStripMenuItem("SamuraiBoss", null, SetRunner)
+                {
+                    Checked = runner.Equals("samuraiboss")
                 }
             });
 
@@ -153,7 +158,8 @@ namespace RunCat
         {
             string prefix = 0 < manualTheme.Length ? manualTheme : systemTheme;
             ResourceManager rm = Resources.ResourceManager;
-            int capacity = runner.Equals("cat") ? 5 : 10;
+            //AddSamurai
+            int capacity = runner.Equals("cat")||runner.Equals("samuraiboss") ? 5 : 10;
             List<Icon> list = new List<Icon>(capacity);
             for (int i = 0; i < capacity; i++)
             {
